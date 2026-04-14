@@ -19,36 +19,66 @@ Antes de começar, você precisará ter instalado:
 - Node.js & NPM
 - MySQL
 - **Redis** (Obrigatório para o processamento de vínculos em massa)
-    - _Nota:_ No **Laragon**, certifique-se de que o Redis está ativo (`Menu -> Redis -> Start`).
+  - _Nota:_ No **Laragon**, certifique-se de que o Redis está ativo (`Menu -> Redis -> Start`).
 
 ## 🚀 Como instalar e rodar
 
 1. **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/Rafael-Garlant/VmarketTest.git](https://github.com/Rafael-Garlant/VmarketTest.git)
+```bash
+    git clone https://github.com/Rafael-Garlant/VmarketTest.git
     cd VmarketTest
-    ```
-2. **Instale as dependências do backend:**
-    ```bash
+```
+
+2. **Instale as dependências:**
+```bash
     composer install
     npm install
-    ```
-3. **Configure o ambiente:**
-    - Copie o arquivo `.env.example` para `.env`:
-    ```bash
-    cp .env.example .env
-    ```
-4. Gere a chave da aplicação e rode as migrations:
+```
 
-    ```bash
+3. **Configure o ambiente:**
+
+    Copie o arquivo `.env.example` para `.env`:
+```bash
+    cp .env.example .env
+```
+
+    Abra o `.env` e configure as seguintes variáveis:
+```env
+    DB_DATABASE=vmarket
+    DB_USERNAME=seu_usuario
+    DB_PASSWORD=sua_senha
+
+    REDIS_HOST=127.0.0.1
+    REDIS_PORT=6379
+
+    QUEUE_CONNECTION=redis
+```
+
+4. **Gere a chave da aplicação e rode as migrations:**
+```bash
     php artisan key:generate
     php artisan migrate --seed
-    ```
+```
 
-5. Inicie os servidores:
+5. **Inicie os servidores:**
 
-Terminal 1 (Servidor PHP): `php artisan serve`
+    > ⚠️ Os três terminais abaixo devem rodar simultaneamente.
 
-Terminal 2 (Compilação Frontend): `npm run dev`
+    Terminal 1 — Servidor PHP:
+```bash
+    php artisan serve
+```
 
-Terminal 3 (CRUCIAL - Worker das Filas): `php artisan queue:work`
+    Terminal 2 — Compilação do Frontend:
+```bash
+    npm run dev
+```
+
+    Terminal 3 — Worker das Filas (obrigatório para vínculos em massa):
+```bash
+    php artisan queue:work
+```
+
+6. **Acesse o sistema:**
+
+    Abra o navegador em [http://localhost:8000](http://localhost:8000)
