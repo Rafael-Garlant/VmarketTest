@@ -45,8 +45,8 @@ Antes de começar, você precisará ter instalado:
     Abra o `.env` e configure as seguintes variáveis:
 ```env
     DB_DATABASE=vmarket
-    DB_USERNAME=seu_usuario
-    DB_PASSWORD=sua_senha
+    DB_USERNAME=seu_usuario # ou root
+    DB_PASSWORD=sua_senha   # ou sem senha
 
     REDIS_HOST=127.0.0.1
     REDIS_PORT=6379
