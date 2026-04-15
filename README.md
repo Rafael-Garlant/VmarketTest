@@ -69,19 +69,26 @@ Antes de começar, você precisará ter instalado:
 Onde acessar o **TERMINAL** e **INCIAR TUDO** pelo Laragon:
 <img width="1027" height="653" alt="image" src="https://github.com/user-attachments/assets/8209bc07-b49a-4cb4-bd18-94cb2a56696e" />
 
+Abrindo outro terminal pelo Laragon:
+Clique no ícone com sinal de **+** para abir outro terminal.
+<img width="751" height="383" alt="image" src="https://github.com/user-attachments/assets/2de05b40-c27a-43e3-84d9-9f26d758bf0e" />
+
 
 Terminal 1 — Servidor PHP:
 ```bash
+    cd Vmarmket
     php artisan serve
 ```
 
 Terminal 2 — Compilação do Frontend:
 ```bash
+    cd Vmarmket
     npm run dev
 ```
 
 Terminal 3 — Worker das Filas (obrigatório para vínculos em massa):
 ```bash
+    cd Vmarmket
     php artisan queue:work
 ```
 
