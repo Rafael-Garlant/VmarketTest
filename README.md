@@ -33,6 +33,8 @@ Antes de começar, você precisará ter instalado:
 ```bash
     composer install
     npm install
+    # Se caso o npm install não funcionar, use o comando a abaixo
+    npm install --force
 ```
 
 3. **Configure o ambiente:**
