@@ -52,6 +52,7 @@ Antes de começar, você precisará ter instalado:
     REDIS_PORT=6379
 
     QUEUE_CONNECTION=redis
+    CACHE_STORE=redis
 ```
 
 4. **Gere a chave da aplicação e rode as migrations:**
@@ -64,17 +65,22 @@ Antes de começar, você precisará ter instalado:
 
     > ⚠️ Os três terminais abaixo devem rodar simultaneamente.
 
-    Terminal 1 — Servidor PHP:
+
+Onde acessar o **TERMINAL** e **INCIAR TUDO** pelo Laragon:
+<img width="1027" height="653" alt="image" src="https://github.com/user-attachments/assets/8209bc07-b49a-4cb4-bd18-94cb2a56696e" />
+
+
+Terminal 1 — Servidor PHP:
 ```bash
     php artisan serve
 ```
 
-    Terminal 2 — Compilação do Frontend:
+Terminal 2 — Compilação do Frontend:
 ```bash
     npm run dev
 ```
 
-    Terminal 3 — Worker das Filas (obrigatório para vínculos em massa):
+Terminal 3 — Worker das Filas (obrigatório para vínculos em massa):
 ```bash
     php artisan queue:work
 ```
