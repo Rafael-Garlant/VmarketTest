@@ -24,9 +24,12 @@ Antes de começar, você precisará ter instalado:
 
 ## 🚀 Como instalar e rodar
 
+### Execute todos os comandos dentro da pasta do projeto SEMPRE. Não se esqueça de rodar `cd VmarketTest`.
+
 1. **Clone o repositório:**
 
-- Após ter baixado o Laragon, clone o repositório na pasta `C:\laragon\www\VmarketTest\`
+- Após ter baixado o Laragon, clone o repositório na pasta `C:\laragon\www\`
+
 
 ```bash
 git clone https://github.com/Rafael-Garlant/VmarketTest.git
@@ -36,15 +39,16 @@ cd VmarketTest
 2. **Instale as dependências:**
 
 ```bash
-npm install
-# Se caso o npm install não funcionar, use o comando a abaixo
+npm install # Se caso o npm install não funcionar, use o comando a abaixo
+
 npm install --force
 composer install # se der erro rodando pelo terminal do VSCode, rode esse comando no terminal do Laragon.
 ```
 
 3. **Configure o ambiente:**
 
-    Copie o arquivo `.env.example` para `.env`:
+   Copie o arquivo `.env.example` para `.env`:
+   Se caso não tiver o `.env` crie-o na raiz do projeto.
 
 ```bash
 cp .env.example .env
@@ -53,7 +57,7 @@ cp .env.example .env
     Abra o `.env` e configure as seguintes variáveis:
 
 ```env
-DB_DATABASE=vmarket
+DB_DATABASE=VmarketTest
 DB_USERNAME=seu_usuario # ou root
 DB_PASSWORD=sua_senha   # ou sem senha
 
@@ -65,20 +69,21 @@ CACHE_STORE=redis
 REDIS_CLIENT=predis
 ```
 
-4. **Gere a chave da aplicação e rode as migrations:**
-
-```bash
-composer install # rode se caso não tiver funcionado pelo terminal do VSCode.
-php artisan key:generate
-php artisan migrate --seed
-```
-
-5. **Inicie os servidores:**
+4. **Inicie os servidores:**
 
     > ⚠️ Os três terminais abaixo devem rodar simultaneamente.
 
 Clique em **INCIAR TUDO** e depois em**TERMINAL** pelo Laragon:
 <img width="1027" height="653" alt="image" src="https://github.com/user-attachments/assets/8209bc07-b49a-4cb4-bd18-94cb2a56696e" />
+
+5. **Gere a chave da aplicação e rode as migrations:**
+
+```bash
+composer install # rode se caso não tiver funcionado pelo terminal do VSCode.
+mysql -u root -e "create database vmarket;
+php artisan key:generate
+php artisan migrate --seed
+```
 
 Abrindo outro terminal pelo Laragon:
 Clique no ícone com sinal de **+** para abir outro terminal.
@@ -110,4 +115,4 @@ php artisan queue:work
 > Senha: password
 
 - Abra o navegador em [http://localhost:8000](http://localhost:8000)
-- Mas se quiser criar um usuário próprio, acesse [http://localhost:8000](http://localhost:8000/register)
+- Mas se quiser criar um usuário próprio, acesse [http://localhost:8000/register](http://localhost:8000/register)
