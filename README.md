@@ -73,22 +73,19 @@ Abrindo outro terminal pelo Laragon:
 Clique no ícone com sinal de **+** para abir outro terminal.
 <img width="751" height="383" alt="image" src="https://github.com/user-attachments/assets/2de05b40-c27a-43e3-84d9-9f26d758bf0e" />
 
-
+Rode o comando `cd Vmarmket` se caso a pasta raiz não for Vmarket.
 Terminal 1 — Servidor PHP:
 ```bash
-    cd Vmarmket
     php artisan serve
 ```
 
 Terminal 2 — Compilação do Frontend:
 ```bash
-    cd Vmarmket
     npm run dev
 ```
 
 Terminal 3 — Worker das Filas (obrigatório para vínculos em massa):
 ```bash
-    cd Vmarmket
     php artisan queue:work
 ```
 
