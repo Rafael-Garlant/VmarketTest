@@ -46,16 +46,19 @@ O uso se concentrou no aumento de produtividade pelo curto prazoe e entender exa
 ****
 
 ## 🔮 7. O que eu melhoraria com mais tempo?
-1. **Arquitetura Avançada**: Para deixar as rotas mais limpas e facilitar os testes unitários, a lógica de negócio seria extraída dos Controllers para uma camada de **Services/Repositories**.
-2. **Auditoria e Segurança**: Para assegurar que nenhuma informação seja perdida de forma permanente e permitir auditorias precisas, implementaria **Soft Deletes** em todas as tabelas principais.
+1. **Arquitetura Avançada**:
+    -Para deixar as rotas mais limpas e facilitar os testes unitários, a lógica de negócio seria extraída dos Controllers para uma camada de **Services/Repositories**.
+2. **Auditoria e Segurança**:
+    -Para assegurar que nenhuma informação seja perdida de forma permanente e permitir auditorias precisas, implementaria **Soft Deletes** em todas as tabelas principais.
 3. **Responsividade Mobile-First**: 
-- Para telas menores, adotaria a visualização de tabelas no formato de **cards empilháveis**, removendo a necessidade de rolagem horizontal e aprimorando a experiência do usuário em dispositivos móveis.
-- Melhoria da responsividade em todo o ecossistema do projeto.
+    - Para telas menores, adotaria a visualização de tabelas no formato de **cards empilháveis**, removendo a necessidade de rolagem horizontal e aprimorando a experiência do usuário em dispositivos móveis.
+    - Melhoria da responsividade em todo o ecossistema do projeto.
 4. **Inteligência de Aquisição**:
-- **Comparativo Automático**: o sistema faria uma análise entre fornecedores, indicando automaticamente quem oferece o menor e o maior preço para um item específico.
-- **Gestão de Estoque**: Painel de comparação dos níveis de estoque para ajudar na priorização de pedidos.
+    - **Comparativo Automático**: o sistema faria uma análise entre fornecedores, indicando automaticamente quem oferece o menor e o maior preço para um item específico.
+    - **Gestão de Estoque**: Painel de comparação dos níveis de estoque para ajudar na priorização de pedidos.
 5. **Aprimoramento de UX/UI**:
-- **Micro-interações**: Inclusão de animações sutis em botões (feedback de clique e hover) e transições suaves em modais/popups para uma experiência de navegação mais fluida e profissional.
-6. **Dashboard Gerencial**: Desenvolvimento de uma interface de indicadores (KPIs) com gráficos (Chart.js) exibindo o volume de compras e despesas por período e fornecedor.
+    - **Micro-interações**: Inclusão de animações sutis em botões (feedback de clique e hover) e transições suaves em modais/popups para uma experiência de navegação mais fluida e profissional.
+6. **Dashboard Gerencial**:
+    -Desenvolvimento de uma interface de indicadores (KPIs) com gráficos (Chart.js) exibindo o volume de compras e despesas por período e fornecedor.
 
   ****
