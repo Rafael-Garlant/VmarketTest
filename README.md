@@ -57,7 +57,7 @@ cp .env.example .env
     Abra o `.env` e configure as seguintes variáveis:
 
 ```env
-DB_DATABASE=VmarketTest
+DB_DATABASE=vmarket
 DB_USERNAME=seu_usuario # ou root
 DB_PASSWORD=sua_senha   # ou sem senha
 
@@ -80,7 +80,7 @@ Clique em **INCIAR TUDO** e depois em**TERMINAL** pelo Laragon:
 
 ```bash
 composer install # rode se caso não tiver funcionado pelo terminal do VSCode.
-mysql -u root -e "create database vmarket;
+mysql -u root -e "create database vmarket;"
 php artisan key:generate
 php artisan migrate --seed
 ```
@@ -116,3 +116,9 @@ php artisan queue:work
 
 - Abra o navegador em [http://localhost:8000](http://localhost:8000)
 - Mas se quiser criar um usuário próprio, acesse [http://localhost:8000/register](http://localhost:8000/register)
+
+## 🛠️ Solução de Problemas
+
+- **Erro `Class "Predis\Client" not found`:** Certifique-se de que o Redis está ativo no Laragon e que `REDIS_CLIENT=predis` está no seu `.env`.
+- **Erro de conexão com Banco:** Verifique se o MySQL está iniciado no Laragon e se o banco `vmarket` foi criado.
+- **Conflito no `npm install`:** Sempre utilize a flag `--force` para garantir a compatibilidade das versões do Vite/React.
