@@ -47,9 +47,9 @@ O uso se concentrou no aumento de produtividade pelo curto prazoe e entender exa
 
 ## 🔮 7. O que eu melhoraria com mais tempo?
 1. **Arquitetura Avançada**:
-    -Para deixar as rotas mais limpas e facilitar os testes unitários, a lógica de negócio seria extraída dos Controllers para uma camada de **Services/Repositories**.
+    - Para deixar as rotas mais limpas e facilitar os testes unitários, a lógica de negócio seria extraída dos Controllers para uma camada de **Services/Repositories**.
 2. **Auditoria e Segurança**:
-    -Para assegurar que nenhuma informação seja perdida de forma permanente e permitir auditorias precisas, implementaria **Soft Deletes** em todas as tabelas principais.
+    - Para assegurar que nenhuma informação seja perdida de forma permanente e permitir auditorias precisas, implementaria **Soft Deletes** em todas as tabelas principais.
 3. **Responsividade Mobile-First**: 
     - Para telas menores, adotaria a visualização de tabelas no formato de **cards empilháveis**, removendo a necessidade de rolagem horizontal e aprimorando a experiência do usuário em dispositivos móveis.
     - Melhoria da responsividade em todo o ecossistema do projeto.
