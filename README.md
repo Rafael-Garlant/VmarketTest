@@ -62,6 +62,7 @@ Antes de começar, você precisará ter instalado:
     composer install # rode se caso não tiver funcionado pelo terminal do VSCode.
     php artisan key:generate
     php artisan migrate --seed
+composer require predis/predis
 ```
 
 5. **Inicie os servidores:**
