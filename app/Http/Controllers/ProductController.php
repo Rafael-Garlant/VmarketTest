@@ -98,8 +98,12 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->suppliers()->detach();
+        if ($product->orderItems()->exists()) {
+            return back()->withErrors(['error' => 'Não é possível excluir: este produto possui histórico de pedidos.']);
+        }
         $product->delete();
 
         return redirect()->back()->with('success', 'Produto removido com sucesso!');
     }
+
 }
