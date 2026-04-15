@@ -31,10 +31,10 @@ Antes de começar, você precisará ter instalado:
 
 2. **Instale as dependências:**
 ```bash
-    composer install
     npm install
     # Se caso o npm install não funcionar, use o comando a abaixo
     npm install --force
+    composer install # se der erro rodando pelo terminal do VSCode, rode esse comando no terminal do Laragon.
 ```
 
 3. **Configure o ambiente:**
@@ -59,6 +59,7 @@ Antes de começar, você precisará ter instalado:
 
 4. **Gere a chave da aplicação e rode as migrations:**
 ```bash
+    composer install # rode se caso não tiver funcionado pelo terminal do VSCode.
     php artisan key:generate
     php artisan migrate --seed
 ```
