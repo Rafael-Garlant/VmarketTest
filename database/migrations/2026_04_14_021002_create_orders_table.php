@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('supplier_id')->constrained(); // O pedido é para QUAL fornecedor?
+            $table->foreignId('supplier_id')->constrained();
             $table->decimal('total_price', 10, 2)->default(0);
             $table->string('status')->default('pendente');
+
+            // Adicione esta linha:
+            $table->text('observations')->nullable();
+
             $table->timestamps();
         });
     }

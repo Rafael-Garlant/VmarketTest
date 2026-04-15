@@ -23,8 +23,9 @@ class OrderController extends Controller
 
     public function getProductsBySupplier(Supplier $supplier)
     {
-
-        $products = $supplier->products()->get(['products.id', 'products.name', 'products.code']);
+        $products = $supplier->products()
+                             ->where('active', true) // Adicionado este filtro!
+                             ->get(['products.id', 'products.name', 'products.code']);
 
         return response()->json($products);
     }
@@ -33,31 +34,31 @@ class OrderController extends Controller
     {
         $validated = $request->validate([
             'supplier_id'             => ['required', 'exists:suppliers,id'],
+            'observations'            => ['nullable', 'string'], // Adicionado!
             'items'                   => ['required', 'array', 'min:1'],
             'items.*.product_id'      => ['required', 'exists:products,id'],
             'items.*.quantity'        => ['required', 'integer', 'min:1'],
             'items.*.unit_price'      => ['required', 'numeric', 'min:0'],
         ]);
 
-        // Calcula o total geral do pedido
         $totalPrice = collect($validated['items'])->sum(
             fn($item) => $item['quantity'] * $item['unit_price']
         );
 
-        // Cria o pedido
         $order = Order::create([
-            'supplier_id' => $validated['supplier_id'],
-            'total_price' => $totalPrice,
-            'status'      => 'pendente',
+            'supplier_id'  => $validated['supplier_id'],
+            'total_price'  => $totalPrice,
+            'status'       => 'pendente',
+            'observations' => $validated['observations'] ?? null, // Adicionado!
         ]);
 
-        // Cria os itens do pedido
         foreach ($validated['items'] as $item) {
             $order->items()->create([
                 'product_id' => $item['product_id'],
                 'quantity'   => $item['quantity'],
                 'unit_price' => $item['unit_price'],
                 'subtotal'   => $item['quantity'] * $item['unit_price'],
+                // Nota: O seu model OrderItem precisa ter 'subtotal' no $fillable se for salvar assim.
             ]);
         }
 
