@@ -18,12 +18,14 @@ Antes de começar, você precisará ter instalado:
 - Composer
 - Node.js & NPM
 - MySQL
+- Laragon [Site para baixar](https://laragon.org/download)
 - **Redis** (Obrigatório para o processamento de vínculos em massa)
   - _Nota:_ No **Laragon**, certifique-se de que o Redis está ativo (`Menu -> Redis -> Start`).
 
 ## 🚀 Como instalar e rodar
 
 1. **Clone o repositório:**
+- Após ter baixado o Laragon, clone o repositório na pasta C:\laragon\www\
 ```bash
 git clone https://github.com/Rafael-Garlant/VmarketTest.git
 cd VmarketTest
