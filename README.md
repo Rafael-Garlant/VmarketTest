@@ -95,8 +95,8 @@ Terminal 3 — Worker das Filas (obrigatório para vínculos em massa):
 
 6. **Acesse o sistema:**
 
-> Antes de acessar, por padrão já é feito um login para uso que é o 
-> E-mail: test@example.com
-> Senha: password
-> Abra o navegador em [http://localhost:8000](http://localhost:8000)
+> Antes de acessar, por padrão, o Breeze cria um login para uso que é o   
+> E-mail: test@example.com  
+> Senha: password  
+> Abra o navegador em [http://localhost:8000](http://localhost:8000)  
 > Mas se quiser criar um usuário próprio, acesse [http://localhost:8000](http://localhost:8000/register)
