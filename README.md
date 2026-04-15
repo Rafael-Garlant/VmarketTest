@@ -20,18 +20,21 @@ Antes de começar, você precisará ter instalado:
 - MySQL
 - Laragon [Site para baixar](https://laragon.org/download)
 - **Redis** (Obrigatório para o processamento de vínculos em massa)
-  - _Nota:_ No **Laragon**, certifique-se de que o Redis está ativo (`Menu -> Redis -> Start`).
+    - _Nota:_ No **Laragon**, certifique-se de que o Redis está ativo (`Menu -> Redis -> Start`).
 
 ## 🚀 Como instalar e rodar
 
 1. **Clone o repositório:**
-- Após ter baixado o Laragon, clone o repositório na pasta C:\laragon\www\
+
+- Após ter baixado o Laragon, clone o repositório na pasta `C:\laragon\www\VmarketTest\`
+
 ```bash
 git clone https://github.com/Rafael-Garlant/VmarketTest.git
 cd VmarketTest
 ```
 
 2. **Instale as dependências:**
+
 ```bash
 npm install
 # Se caso o npm install não funcionar, use o comando a abaixo
@@ -42,11 +45,13 @@ composer install # se der erro rodando pelo terminal do VSCode, rode esse comand
 3. **Configure o ambiente:**
 
     Copie o arquivo `.env.example` para `.env`:
+
 ```bash
 cp .env.example .env
 ```
 
     Abra o `.env` e configure as seguintes variáveis:
+
 ```env
 DB_DATABASE=vmarket
 DB_USERNAME=seu_usuario # ou root
@@ -57,22 +62,22 @@ REDIS_PORT=6379
 
 QUEUE_CONNECTION=redis
 CACHE_STORE=redis
+REDIS_CLIENT=predis
 ```
 
 4. **Gere a chave da aplicação e rode as migrations:**
+
 ```bash
 composer install # rode se caso não tiver funcionado pelo terminal do VSCode.
 php artisan key:generate
 php artisan migrate --seed
-composer require predis/predis
 ```
 
 5. **Inicie os servidores:**
 
     > ⚠️ Os três terminais abaixo devem rodar simultaneamente.
 
-
-Clique em  **INCIAR TUDO** e depois em**TERMINAL**  pelo Laragon:
+Clique em **INCIAR TUDO** e depois em**TERMINAL** pelo Laragon:
 <img width="1027" height="653" alt="image" src="https://github.com/user-attachments/assets/8209bc07-b49a-4cb4-bd18-94cb2a56696e" />
 
 Abrindo outro terminal pelo Laragon:
@@ -81,24 +86,28 @@ Clique no ícone com sinal de **+** para abir outro terminal.
 
 Rode o comando `cd Vmarket` se caso a pasta raiz não for Vmarket.
 Terminal 1 — Servidor PHP:
+
 ```bash
 php artisan serve
 ```
 
 Terminal 2 — Compilação do Frontend:
+
 ```bash
 npm run dev
 ```
 
 Terminal 3 — Worker das Filas (obrigatório para vínculos em massa):
+
 ```bash
 php artisan queue:work
 ```
 
 6. **Acesse o sistema:**
 
-> Antes de acessar, por padrão, o Breeze cria um login para uso que é o   
+> Antes de acessar, por padrão, o Breeze cria um login para uso que é o  
 > E-mail: test@example.com  
-> Senha: password  
-- Abra o navegador em [http://localhost:8000](http://localhost:8000)  
+> Senha: password
+
+- Abra o navegador em [http://localhost:8000](http://localhost:8000)
 - Mas se quiser criar um usuário próprio, acesse [http://localhost:8000](http://localhost:8000/register)
