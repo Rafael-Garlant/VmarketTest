@@ -59,6 +59,6 @@ O uso se concentrou no aumento de produtividade pelo curto prazoe e entender exa
 5. **Aprimoramento de UX/UI**:
     - **Micro-interações**: Inclusão de animações sutis em botões (feedback de clique e hover) e transições suaves em modais/popups para uma experiência de navegação mais fluida e profissional.
 6. **Dashboard Gerencial**:
-    -Desenvolvimento de uma interface de indicadores (KPIs) com gráficos (Chart.js) exibindo o volume de compras e despesas por período e fornecedor.
+    - Desenvolvimento de uma interface de indicadores (KPIs) com gráficos (Chart.js) exibindo o volume de compras e despesas por período e fornecedor.
 
   ****
